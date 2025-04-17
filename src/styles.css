@@ -1,0 +1,144 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+body {
+    color: #e0e6e9;
+    background-color: #092635;
+}
+
+#container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 10fr;
+    height: 100vh;
+}
+
+input, textarea, fieldset {
+    background-color: transparent;
+    color: #e0e6e9;
+    border: 1px solid #4d5b64;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    background-color: #092635;
+    padding: 1rem;
+    border-right: 1px solid #4d5b64;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    grid-area: header;
+    background-color: #1b3944;
+    color: white;
+    display: flex;
+    padding-left: 1rem;
+    align-items: center;
+}
+
+#project-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-item {
+    background: none;
+    border: none;
+    text-align: start;
+}
+
+.project-item:hover,
+.todo-item:hover {
+    background-color: #1f4656;
+}
+
+#todo-items {
+    margin: 1rem 0 1rem 0;
+}
+
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 1px solid #4db6ac;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#todo-form-container {
+    width: 700px;
+}
+
+#todo-form-container > *{
+    width: 700px;
+}
+
+button {
+    padding: 0.5rem;
+    background-color: transparent;
+    color: #ddd;
+    border: 1px solid #4d5b64;
+}
+
+#current-project {
+    font-size: 0.8rem;
+}
+
+#newProject {
+    max-width: 100%;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#project-container {
+    padding: 1rem 0 1rem 0;
+}
+
+#content {
+    padding: 1rem 0 0 1rem;
+    background-color: #092635;
+}
+
+#todo-items button{
+    margin-top: 1rem;
+}
+
+.todo-item {
+    display: grid;
+    grid-template-columns: 25px 1fr 200px 200px;
+    align-items: center;
+    border: 1px solid #4d5b64;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #1b3944;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.todo-item input[type="checkbox"]:checked ~ *  {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.todo-item input[type="checkbox"] {
+    margin-right: 0.5rem;
+}

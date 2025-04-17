@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="container">
+        <div id="header">Todo app</div>
+        <div id="sidebar">
+            <h2>Projects</h2>
+            <div id="project-container"></div>
+            <button id="newProject">New Project</button>
+            <div id="project-form" style="display: none;">
+                <form action="" class="form-container">
+                    <input type="text" id="name" placeholder="Project name">
+                    <div id="form-container-buttons">
+                    <button id="submitButton" type="submit">Add Project</button>
+                    <button type="button" id="cancelProjectForm">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="content">
+            <div id="initial-content" style="display: block;">
+                <h2>Welcome to Your Project Management App!</h2>
+                <p>Click the "New Project" button in the sidebar to create your first project.</p>
 
+                <div class="placeholder-image">
+                    <!-- You can add an image here to make the interface more engaging -->
+                    <img src="path/to/placeholder-image.png" alt="Placeholder Image">
+                </div>
+            </div>
+            <p id="select-project">Please select a project to add todos</p>
+            <p id="current-project" style="display: none;">Current Project:</p>
+            <div id="todo-items"></div>
+            
+            <div id="todo-form-container" style="display: none;">
+                <form action="" class="form-container" id="todo-form">
+                <label for="todo-title">Task Title:</label>
+                <input type="text" id="todo-title" placeholder="Task name">
+                <label for="todo-description">Description:</label>
+                <textarea id="todo-description" name="todo-description" placeholder="Enter description"></textarea>
+                <label for="todo-due-date">Due Date:</label>
+                <input type="date" id="todo-due-date" name="todo-due-date">
+                <fieldset>
+                    <legend>Priority:</legend>
+                    <label>
+                        <input type="radio" name="todo-priority" value="high"> High
+                    </label>
+                    <label>
+                        <input type="radio" name="todo-priority" value="medium"> Medium
+                    </label>
+                    <label>
+                        <input type="radio" name="todo-priority" value="low"> Low
+                    </label>
+                </fieldset>
+                <button type="submit">Add Task</button>
+                <button type="button" id="cancelTodoForm">Cancel</button>
+            </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

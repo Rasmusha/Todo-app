@@ -6,8 +6,7 @@ class Project{
         this.todos = todos;
     }
 
-    addNewTodo(title,description,dueDate,priority,notes = '',isComplete = false) {
-        const todo = new TodoItem(title,description,dueDate,priority,notes,isComplete);
+    addNewTodo(todo) {
         this.todos.push(todo);
     }
 
