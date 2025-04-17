@@ -7,6 +7,7 @@ let currentProject = null;
 
 const newProjectBtn = document.getElementById('newProject');
 const projectFormContainer = document.getElementById('project-form');
+const projecForm = document.getElementById('form-container')
 projectFormContainer.classList.add('show');
 const todoFormContainer = document.getElementById('todo-form-container');
 const todoForm = document.getElementById('todo-form');
@@ -25,14 +26,17 @@ newProjectBtn.addEventListener('click', () => {
     })
 });
 
-
-
 document.querySelector('.form-container').addEventListener('submit', function(event) {
     event.preventDefault();
-    const name = document.getElementById('name').value;
+    const name = document.getElementById('name').value.trim();
+    if (!name) {
+        alert("Project name cannot be empty");
+        return;
+    }
     const project = new Project(name)
     projects.push(project);
     projectFormContainer.style.display = "none";
+    projecForm.reset();
     newProjectBtn.style.display = 'block';
     displayProjects();
 })
@@ -60,7 +64,6 @@ const displayTodos = (project) => {
     currentProject = project;
     selectProject.style.display = 'none';
     currentProjectText.style.display = 'block';
-    currentProject.style.display = 'block';
     const todoContainer = document.getElementById('todo-items');
     todoContainer.innerHTML = '';
     const projectName = document.createElement('h2');
